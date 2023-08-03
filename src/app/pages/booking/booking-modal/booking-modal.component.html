@@ -1,0 +1,128 @@
+<div class="modal-header background-theme-color">
+    <h4 class="modal-title text-white">
+      {{ "Cấu hình form theo loại tài sản" }}
+    </h4>
+    <!-- <button
+      (click)="activeModal.dismiss('Cross click')"
+      aria-label="Close"
+      class="close text-white"
+      type="button"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button> -->
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="row">
+        <!-- <div class="col-sm-12 col-md-6">
+          <label class="pt-1"
+            >{{ "Key"}} (<span class="text-danger">*</span>)</label
+          >
+          <input type="text" class ="form-control" id = "firstName"
+          [(ngModel)] = "productForm.id" name = "id">
+          <div
+          
+            class="invalid-feedback text-danger"
+          >
+            {{ "system_label.vui_long_nhap_thong_tin"}}
+          </div>
+        </div> -->
+        <div class="col-sm-12 col-md-6">
+          <label class="pt-1"
+            >{{ "Họ tên" }} (<span class="text-danger">*</span
+            >)</label
+          >
+          <input type="text" class ="form-control" id = "firstName" [(ngModel)]="ticketForm.customers.fullName"
+          name = "fullName">
+          <div
+          
+            class="invalid-feedback text-danger"
+          >
+            {{ "system_label.vui_long_nhap_thong_tin"}}
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <label class="pt-1"
+              >{{ "Email" }} (<span class="text-danger">*</span
+              >)</label
+            >
+            <input type="text" class ="form-control" id = "firstName" [(ngModel)]="ticketForm.customers.email"
+            name = "email">
+            <div
+            
+              class="invalid-feedback text-danger"
+            >
+              {{ "system_label.vui_long_nhap_thong_tin"}}
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <label class="pt-1"
+              >{{ "Số điện thoại" }} (<span class="text-danger">*</span
+              >)</label
+            >
+            <input type="text" class ="form-control" id = "firstName" [(ngModel)]="ticketForm.customers.phoneNumber"
+            name = "phoneNumber">
+            <div
+            
+              class="invalid-feedback text-danger"
+            >
+              {{ "system_label.vui_long_nhap_thong_tin"}}
+            </div>
+          </div>
+        <!-- <div class="col-sm-12 col-md-6">
+          <label class="pt-1"
+            >{{ "Tên GDV" }} (<span class="text-danger">*</span
+            >)</label
+          >
+          <input type="text" class ="form-control" id = "firstName"
+          name = "username">
+          <div
+           
+            class="invalid-feedback text-danger"
+          >
+            {{ "system_label.vui_long_nhap_thong_tin"}}
+          </div>
+        </div> -->
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer" *ngIf="!isSubmit">
+    <button
+      [disabled]="loading"
+      (click)="closeModal()"
+      class="btn btn-secondary"
+      type="button"
+    >
+      <i class="fas fa-times-circle mr-1"></i>{{ "Huỷ bỏ" }}
+    </button>
+    <button 
+      [disabled]="loading"
+      (click)="submit()"
+      class="btn btn-primary"
+      type="button"
+      *ngIf="['CREATE', 'EDIT'].includes(type)"
+    >
+      <i class="fas fa-check mr-1"></i>Lưu
+    </button>
+  </div>
+  <div class="bootstrap-wrapper"*ngIf="isSubmit">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Quiz Result</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="text-center">
+                    <h1>STT: <b>{{num}}</b></h1>
+                    <h1>Tên Sản Phẩm: <b>{{productName}}</b></h1>
+                    <h1>Trạng thái: <b>{{status}}</b></h1>
+                </mat-card-content>
+                <div class="container text-center mb20 mt20">
+                    <button (click)="printPage()" mat-raised-button color="primary">Print</button>
+                    <button  mat-raised-button color="accent" (click)="closeModal()" class="ml20">Home</button>
+                </div> 
+            </mat-card>
+        </div>
+    </div>
+</div>
+  

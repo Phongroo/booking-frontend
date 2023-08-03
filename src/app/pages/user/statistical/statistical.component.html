@@ -1,0 +1,73 @@
+<section class="container-fluid">
+    <div class="card" style="margin-top: 20px;">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12">
+            <div class="card-box">
+              <h2 class="header-title">Tìm kiếm</h2>
+              <div class="row">
+                <div class="col-12 p-0">
+                  <div class="p-2">
+                    <!-- <div class="row">
+                      <label class="col-sm-4 col-md-6 col-lg-5 col-xl-1 col-form-label">Tài khoản</label>
+                      <div class="col-sm-7 col-md-3 col-lg-7 col-xl-5 ">
+                        <input type="text" class="form-control">
+                      </div>
+                      <label class="col-sm-4 col-md-6 col-lg-5 col-xl-1 col-form-label">Đơn vị</label>
+                      <div class="col-sm-7 col-md-6 col-lg-7 col-xl-5 mt-lg-1 mt-md-1 mt-sm-1 mt-xl-0">
+                        <select name="" id="" class="form-control">
+                          <option value="">Chọn đơn vị</option>
+                          <option value="">Nothing</option>
+                        </select>
+                      </div>
+                    </div> -->
+                    <div class="row" style="margin-top: 20px;">
+                      <!-- <label class="col-sm-4 col-md-6 col-lg-5 col-xl-1 col-form-label">Chức năng</label>
+                      <div class="col-sm-7 col-md-6 col-lg-7 col-xl-5 ">
+                        <select name="" id="" class="form-control custom-select">
+                          <option value="">Tất cả</option>
+                          <option value="">Nothing</option>
+                        </select>
+                      </div> -->
+                      <label class="col-sm-4 col-md-6 col-lg-5 col-xl-1 col-form-label">Từ ngày</label>
+                      <div class="col-2">
+                        <div class="input-group date" id="datepicker">
+                          <input type="date" [(ngModel)]="startTime" name="startTime" class="form-control" id="date" />
+                        </div>
+                      </div>
+                      <label class="col-sm-4 col-md-6 col-lg-5 col-xl-1 col-form-label">Đến ngày</label>
+                      <div class="col-2">
+                        <div class="input-group date" id="datepicker">
+                          <input type="date" [(ngModel)]="endTime" name="endTime" class="form-control" id="datepicker" placeholder="YYYY-mm-dd" />
+  
+                        </div>
+                      </div>
+  
+                    </div>
+                  </div>
+                  <div class="row pt-3">
+                    <div class="col-4 text-left">
+                      <div ngbDropdown class="d-inline-block" style="margin-left: 10px;">
+                        <button class="btn bg-success mt-3 text-white" ngbDropdownToggle (click)="search()">
+                          <i class="fas fa-download mr-1"></i>Tra cứu</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+            <div class="card-box" *ngIf="isSubmit">
+              <h2 class="header-title">KẾT QUẢ TÌM KIẾM</h2>
+              <div class="row">
+                <div class="col-12 text-right">
+                  <h1>Có {{num}} khách hàng</h1>
+                </div>
+               
+              </div>          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

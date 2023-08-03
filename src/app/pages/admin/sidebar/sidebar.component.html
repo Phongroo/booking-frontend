@@ -1,0 +1,19 @@
+<div class="sidebar-container">
+    <mat-card   style="min-height:799px">
+        <div mat-subheader>Menu</div>
+        <mat-action-list>
+        <button mat-list-item routerLink="/admin"><mat-icon mat-list-icon class="mr10 ">home</mat-icon>Home</button>
+    </mat-action-list>
+        <mat-action-list *ngFor="let c of categories">
+            
+            
+            <button mat-list-item routerLink="{{c?.url}}"><mat-icon mat-list-icon class="mr10">account_circle</mat-icon>{{c.name}}</button>
+           
+           
+        </mat-action-list>
+    <mat-action-list>
+        <button (click)="logout()" mat-list-item ><mat-icon mat-list-icon class="mr10">logout</mat-icon>Logout</button>
+    </mat-action-list>
+    </mat-card>
+
+</div>

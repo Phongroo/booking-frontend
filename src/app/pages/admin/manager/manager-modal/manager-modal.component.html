@@ -1,0 +1,95 @@
+<div class="modal-header background-theme-color">
+    <h4 class="modal-title text-white">
+      {{ "Cấu hình form theo loại tài sản" }}
+    </h4>
+    <button
+      (click)="activeModal.dismiss('Cross click')"
+      aria-label="Close"
+      class="close text-white"
+      type="button"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="row">
+        <!-- <div class="col-sm-12 col-md-6">
+          <label class="pt-1"
+            >{{ "Key"}} (<span class="text-danger">*</span>)</label
+          >
+          <input type="text" class ="form-control" id = "firstName"
+          [(ngModel)] = "productForm.id" name = "id">
+          <div
+          
+            class="invalid-feedback text-danger"
+          >
+            {{ "system_label.vui_long_nhap_thong_tin"}}
+          </div>
+        </div> -->
+        <div class="col-sm-12 col-md-6">
+          <label class="pt-1"
+            >{{ "Sản phẩm" }} (<span class="text-danger">*</span
+            >)</label
+          >
+          <!-- <select class="form-control" id="allocation-algorithm" *ngIf="productForm">
+            {{productForm.product.name}}
+            <option [value]="product.id" *ngFor="let i of product">{{i.name}}</option>
+           
+            
+          </select> -->
+          
+          <select class="form-control" id="allocation-algorithm" [(ngModel)]="Form.productId" name="productId">
+           
+            <option *ngFor="let i of listproduct" [value]="i.id">{{i.name}}</option>
+            
+          </select>
+         
+         
+          <div
+          
+            class="invalid-feedback text-danger"
+          >
+            {{ "system_label.vui_long_nhap_thong_tin"}}
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <label class="pt-1"
+            >{{ "Nhân viên" }} (<span class="text-danger">*</span
+            >)</label
+          >
+          <select class="form-control" id="allocation-algorithm"  [(ngModel)]="Form.userId" name="userId">
+           
+            <option *ngFor="let i of listuser" [value]="i.id">{{i.username}}</option>
+            
+          </select>
+          <div
+           
+            class="invalid-feedback text-danger"
+          >
+            {{ "system_label.vui_long_nhap_thong_tin"}}
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      [disabled]="loading"
+      (click)="closeModal()"
+      class="btn btn-secondary"
+      type="button"
+    >
+      <i class="fas fa-times-circle mr-1"></i>{{ "Huỷ bỏ" }}
+    </button>
+    <button
+      [disabled]="loading"
+      (click)="submit()"
+      class="btn btn-primary"
+      type="button"
+      *ngIf="['CREATE', 'EDIT'].includes(type)"
+    >
+      <i class="fas fa-check mr-1"></i>Lưu
+    </button>
+  </div>
+  

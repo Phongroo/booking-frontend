@@ -1,0 +1,24 @@
+<div class="modal-header background-theme-color">
+<ngb-rating [max]="5" (click)="GetRating()" [formControl]="ratingcontrol"></ngb-rating>
+</div>
+
+
+<div class="modal-footer"   >
+    <button
+     
+      (click)="closeModal()"
+      class="btn btn-secondary"
+      type="button"
+    >
+      <i class="fas fa-times-circle mr-1"></i>{{ "Huỷ bỏ" }}
+    </button>
+    <button 
+      
+      (click)="submit()"
+      class="btn btn-primary"
+      type="button"
+     
+    >
+      <i class="fas fa-check mr-1"></i>Lưu
+    </button>
+  </div>
